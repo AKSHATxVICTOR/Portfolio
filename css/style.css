@@ -1,0 +1,302 @@
+:root {
+  --paper: #f5f3ee;
+  --blood: #7f1d1d;
+}
+
+/* =====================
+   RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: var(--paper);
+  overflow-x: hidden;
+}
+
+/* =====================
+   GLOBAL LAYERS
+===================== */
+#sakura {
+  position: fixed;
+  inset: 0;
+  z-index: 1;              /* petals above mountains */
+  pointer-events: none;
+}
+
+.fog {
+  position: fixed;
+  inset: -50%;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04), transparent 50%);
+  animation: fogMove 120s linear infinite;
+}
+
+.fog-2 {
+  opacity: 0.6;
+  animation-duration: 200s;
+}
+
+.fog-2 {
+  opacity: 0.02;
+  animation-duration: 200s;
+}
+
+@keyframes fogMove {
+  0%   { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(300px) translateY(150px); }
+}
+
+
+/* =====================
+   HERO (REAL LAYERS)
+===================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* MOUNTAINS LAYER */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;              /* lowest layer */
+  background:
+    linear-gradient(
+      rgba(2,6,23,0.55),
+      rgba(2,6,23,0.65)
+    ),
+    url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b") center / cover;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 3;              /* text always on top */
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  letter-spacing: 4px;
+}
+
+.hero p {
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+/* DECOR */
+.katana {
+  width: 120px;
+  height: 4px;
+  margin: 2rem auto;
+  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+}
+
+.crest {
+  width: 48px;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.section {
+  position: relative;
+  z-index: 3;
+  max-width: 1100px;
+  margin: auto;
+  padding: 4rem 2rem;
+  isolation: isolate;
+}
+
+.section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  border-left: 4px solid var(--blood);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0%;
+  height: 2px;
+  background: var(--blood);
+  transition: width 0.4s ease;
+}
+
+.section h2:hover::after {
+  width: 100%;
+}
+
+/* =====================
+   DIVIDERS & BRUSH
+===================== */
+.divider {
+  display: block;
+  width: 60%;
+  margin: 4rem auto;
+  opacity: 0.5;
+  z-index: 3;
+  position: relative;
+}
+
+.brush {
+  width: 140px;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+/* =====================
+   LINKS
+===================== */
+.section-link {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+/*.section-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--blood);
+  transition: width 0.4s ease;
+}
+
+.section-link:hover::after {
+  width: 100%;
+} */
+
+/* =====================
+   PROJECTS
+===================== */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.clickable-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.clickable-card::after {
+  content: "↗ View on GitHub";
+  position: absolute;
+  bottom: 1rem;
+  right: 1.2rem;
+  font-size: 0.75rem;
+  color: #fca5a5;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.clickable-card:hover::after {
+  opacity: 1;
+}
+
+/* =====================
+   SKILLS
+===================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+h4 {
+  color: #fca5a5;
+}
+
+/* =====================
+   STANCE TOGGLE
+===================== */
+#stanceToggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  z-index: 4;
+}
+
+body.blood-stance {
+  background: radial-gradient(circle at top, #450a0a, #020617);
+}
+
+body.blood-stance .katana {
+  background: linear-gradient(90deg, transparent, #dc2626, transparent);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 3rem 1rem 4rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+  color: #fca5a5;
+  margin: 0 0.75rem;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.quote {
+  margin-top: 1rem;
+  opacity: 0.6;
+}

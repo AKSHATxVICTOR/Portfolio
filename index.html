@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshat Kumar Sinha | Samurai Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+
+<body>
+
+  <!-- STANCE TOGGLE -->
+  <button id="stanceToggle" aria-label="Toggle Stance">刀</button>
+
+  <!-- ATMOSPHERE -->
+  <canvas id="sakura"></canvas>
+  <div class="fog fog-1"></div>
+  <div class="fog fog-2"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <img src="assets/ui/crest.svg" class="crest crest-clickable" alt="Focus Trial">
+      <h1>Akshat Kumar Sinha</h1>
+      <div class="katana"></div>
+      <p>Data Science · Android · Digital Samurai · FullStack Developer</p>
+    </div>
+  </header>
+
+
+  <img src="assets/ui/torii-divider.svg" class="divider" alt="">
+
+  <!-- ABOUT -->
+  <section class="section">
+    <h2>The Path</h2>
+    <p>
+        Computer Science student specializing in Data Science at SRMIST.
+        Forging disciplined, data-driven and mobile-first solutions with precision and honor.
+        Focused on building systems that are reliable, scalable, 
+        and grounded in real-world impact—where clean code,
+        thoughtful design, and analytical clarity come together.<br> <br>
+    </p>
+    <ul class="principles">
+        <li>Designing systems for reliability and scale</li>
+        <li>Building automation with clear data contracts</li>
+        <li>Prioritizing readability, maintainability, and performance</li>
+    </ul>
+
+  </section>
+
+  <img src="assets/ui/torii-divider.svg" class="divider" alt="">
+
+  <!-- PROJECTS -->
+  <section class="section">
+    <h2>
+      <a class="section-link" href="https://github.com/AKSHATxVICTOR" target="_blank">
+        Battle Records
+      </a>
+    </h2>
+
+    <div class="projects">
+      <div class="card clickable-card"
+        onclick="window.open('https://github.com/AKSHATxVICTOR/Banking-market-automation','_blank')">
+        <h3>Banking Market Intelligence Automation</h3>
+        <ul>
+          <li>Python automation using financial APIs</li>
+          <li>Computed returns for banking stocks</li>
+          <li>Handled API, timezone & data issues</li>
+          <li>Excel-ready analytical reports</li>
+        </ul>
+      </div>
+
+        <div class="card clickable-card"
+            onclick="window.open('https://github.com/AKSHATxVICTOR/FICALCULATIONS','_blank')">
+            <h3>Financial Calculations Utility</h3>
+                <ul>
+                    <li>Automated financial and numerical computations</li>
+                    <li>Focused on accuracy and reusable logic</li>
+                    <li>Clean, modular implementation</li>
+                </ul>
+        </div>
+
+  </section>
+
+  <img src="assets/ui/torii-divider.svg" class="divider" alt="">
+
+  <!-- SKILLS -->
+  <section class="section">
+    <h2>Weapons & Techniques</h2>
+    <div class="skills-grid">
+      <div>
+        <h4>Languages</h4>
+        <p>C, C++, Python, Kotlin, JavaScript</p>
+      </div>
+      <div>
+        <h4>Data</h4>
+        <p>Pandas, Time-Series, API Extraction</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <p>Git, VS Code, Android Studio</p>
+      </div>
+      <div>
+        <h4>Mindset</h4>
+        <p>Precision, Analysis, Teamwork</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      <a href="https://github.com/AKSHATxVICTOR" target="_blank">GitHub</a> ·
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> ·
+      <a href="mailto:akshatkumarsinha8@gmail.com">Email</a>
+    </p>
+    <p class="quote">“Honor in code. Precision in data.”</p>
+  </footer>
+  <!-- SCRIPTS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
