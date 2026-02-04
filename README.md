@@ -38,15 +38,6 @@ This portfolio is intentionally lightweight and framework-free to keep performan
 
 ---
 
-## 📂 Project Highlights
-
-- **Banking Market Intelligence Automation**  
-  Data-driven automation for analyzing banking sector stocks using APIs and time-series data.
-
-- **Financial Calculations Utility**  
-  A reusable and precise financial computation project focused on correctness and modular design.
-
----
 
 ## 🌐 Live Website
 
