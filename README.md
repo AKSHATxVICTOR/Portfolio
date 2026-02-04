@@ -54,5 +54,4 @@ This portfolio is intentionally lightweight and framework-free to keep performan
 
 ---
 
-## 📁 Repository Structure
 
