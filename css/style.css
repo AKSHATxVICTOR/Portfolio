@@ -306,8 +306,5 @@ footer a:hover {
   text-decoration: none;
 }
 
-.skills-grid a:hover {
-  text-decoration: underline;
-  text-decoration-color: rgba(252,165,165,0.6);
-}
+
 
