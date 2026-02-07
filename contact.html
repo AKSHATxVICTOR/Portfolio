@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/favicon/favicon.ico" />
+
+  <title>Contact | Akshat Kumar Sinha</title>
+  
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/contact.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+
+  <div class="contact-wrapper">
+
+    <!-- LEFT : FORM -->
+    <div class="contact-form">
+      <h1>Contact Me</h1>
+      <p>Let’s build something meaningful.</p>
+
+      <form id="contactForm">
+        <input type="text" name="from_name" placeholder="Your Name" required />
+        <input type="email" name="from_email" placeholder="Your Email" required />
+        <input type="text" name="subject" placeholder="Reason / Subject" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <span id="status"></span>
+
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <!-- RIGHT : VISUAL -->
+    <div class="contact-visual">
+      <div class="code-box">
+        <span>&lt;message&gt;</span>
+        <span class="indent">console.log("Hello Akshat 👋");</span>
+        <span class="indent">await collaboration.start();</span>
+        <span>&lt;/message&gt;</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>

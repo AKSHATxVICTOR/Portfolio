@@ -21,40 +21,59 @@ function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
-
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
+/* === PETAL IMAGES === */
+const whitePetalImg = new Image();
+whitePetalImg.src = "assets/textures/sakura-petal-white.png";
+
+const redPetalImg = new Image();
+redPetalImg.src = "assets/textures/sakura-petal-red.png";
+
+/* === STATE === */
+function isBloodStance() {
+  return document.body.classList.contains("blood-stance");
+}
+
 class Petal {
+
   constructor() {
     this.reset();
+    this.rotation = Math.random() * Math.PI * 2;
+    this.rotationSpeed = (Math.random() - 0.5) * 0.02;
   }
 
   reset() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 3 + 2;
+    this.size = Math.random() * 18 + 12; // realistic petal size
     this.speed = Math.random() * 0.6 + 0.3;
   }
 
   update() {
     this.y += this.speed;
     this.x += wind;
+    this.rotation += this.rotationSpeed;
 
     if (
-      this.y > canvas.height ||
-      this.x < -20 ||
-      this.x > canvas.width + 20
+      this.y > canvas.height + 40 ||
+      this.x < -40 ||
+      this.x > canvas.width + 40
     ) {
       this.reset();
+      this.y = -20;
     }
   }
 
   draw() {
-    ctx.fillStyle = "rgba(255,200,200,0.8)";
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fill();
+    const img = isBloodStance() ? redPetalImg : whitePetalImg;
+
+    ctx.save();
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.rotation);
+    ctx.drawImage(img, -this.size / 2, -this.size / 2, this.size, this.size);
+    ctx.restore();
   }
 }
 
@@ -68,7 +87,6 @@ function animate() {
   });
   requestAnimationFrame(animate);
 }
-
 animate();
 
 /* =====================

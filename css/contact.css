@@ -1,0 +1,142 @@
+:root {
+  --paper: #f5f3ee;
+  --blood: #7f1d1d;
+  --bg: radial-gradient(circle at top, #111827, #020617);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--paper);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-wrapper {
+  width: min(1100px, 95%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+/* LEFT */
+.contact-form {
+  padding: 3rem;
+}
+
+.contact-form h1 {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form p {
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding: 0.75rem 0;
+  margin-bottom: 1.5rem;
+  color: var(--paper);
+  font-size: 0.95rem;
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.contact-form button {
+  margin-top: 1rem;
+  padding: 0.7rem 2.5rem;
+  background: transparent;
+  color: var(--paper);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.05);
+}
+
+#status {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #fca5a5;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* RIGHT */
+.contact-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      rgba(2,6,23,0.8),
+      rgba(2,6,23,0.9)
+    ),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475") center / cover;
+}
+
+.code-box {
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.code-box span {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.code-box .indent {
+  margin-left: 1.2rem;
+  color: #fca5a5;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-visual {
+    display: none;
+  }
+}
