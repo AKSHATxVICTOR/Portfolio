@@ -98,3 +98,33 @@ if (stanceBtn) {
     document.body.classList.toggle("blood-stance");
   });
 }
+
+/* =====================
+   AMBIENT AUDIO CONTROL
+===================== */
+const ambientAudio = document.getElementById("ambientAudio");
+const muteToggle = document.getElementById("muteToggle");
+
+let audioStarted = false;
+
+if (muteToggle && ambientAudio) {
+  muteToggle.addEventListener("click", () => {
+    if (!audioStarted) {
+      ambientAudio.volume = 0.3;
+      ambientAudio.play().then(() => {
+        audioStarted = true;
+        muteToggle.textContent = "🔊";
+      }).catch(err => {
+        console.warn("Audio play blocked:", err);
+      });
+    } else {
+      if (ambientAudio.paused) {
+        ambientAudio.play();
+        muteToggle.textContent = "🔊";
+      } else {
+        ambientAudio.pause();
+        muteToggle.textContent = "🔇";
+      }
+    }
+  });
+}
